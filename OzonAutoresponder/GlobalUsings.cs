@@ -1,0 +1,9 @@
+﻿global using Newtonsoft.Json.Linq;
+global using Newtonsoft.Json;
+global using OzonAutoresponder;
+global using OzonAutoresponder.JsonData;
+global using OzonAutoresponder.JsonData.JsonBodeRequstAnswer;
+global using OzonAutoresponder.JsonData.JsonBodyReviews;
+global using OzonAutoresponder.JsonData.JsonFeedbacksData;
+global using AutoresponderExcelCreator;
+global using AutoresponderExcelCreator.ExcelAnswersTemplate;
