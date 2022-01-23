@@ -45,7 +45,7 @@ namespace OzonAutoresponder
                     }
                 }
             }
-            catch (Exception ex)
+            catch
             {
                 return new Feedbacks();
             }
@@ -86,9 +86,9 @@ namespace OzonAutoresponder
                     }
                 }
             }
-            catch (Exception ex)
+            catch
             {
-                return String.Empty;
+                return string.Empty;
             }
         }
     }

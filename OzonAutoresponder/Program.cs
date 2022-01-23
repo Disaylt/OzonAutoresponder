@@ -25,7 +25,7 @@ void CreateTemplate()
     }
 }
 
-void StartResponder(object obj)
+async void StartResponder(object obj)
 { 
     string pathToStandardExcelFile = $"{GlobalVaribles.TemplatesDirectory}Answers.xlsx";
     string brandsDirectory = $@"{GlobalVaribles.TemplatesDirectory}Brands\";
@@ -49,12 +49,12 @@ void StartResponder(object obj)
             string bodyRequest = JsonBuilder.GetBodyAnswer(answer, feedback.Id.ToString());
             if (GlobalVaribles.Settings.IsAnswer && !string.IsNullOrEmpty(answer))
             {
-                try
+                string? response = await client.PostAnswer(bodyRequest);
+                if (response != null)
                 {
-                    client.PostAnswer(bodyRequest);
                     Console.WriteLine($"Ответ отправлен.");
                 }
-                catch (Exception)
+                else
                 {
                     Console.WriteLine($"Ошибка при отправлении запроса.");
                 }
